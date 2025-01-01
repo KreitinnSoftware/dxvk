@@ -28,7 +28,9 @@ jobs:
 
     - name: Create Tar
       run: |
-        tar -czvf dxvk-${{ env.VERSION_NAME }}.tar.gz build/dxvk-${{ env.VERSION_NAME }}/
+        cd build
+        tar -czvf ../dxvk-${{ env.VERSION_NAME }}.tar.gz dxvk-${{ env.VERSION_NAME }}/
+        cd ..
 
     - name: "Create Release"
       uses: softprops/action-gh-release@v2
