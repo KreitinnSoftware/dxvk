@@ -8,6 +8,8 @@
 
 #include "../util/util_math.h"
 
+#include <algorithm>
+
 namespace dxvk {
 
   struct D3D9SamplerKey {
