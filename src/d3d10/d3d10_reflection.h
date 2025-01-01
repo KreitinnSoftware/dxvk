@@ -7,6 +7,7 @@
 
 #include <d3d10shader.h>
 #include <d3d11shader.h>
+#include <memory>
 
 namespace dxvk {
 
