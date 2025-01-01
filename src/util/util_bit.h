@@ -17,6 +17,7 @@
 #include "util_math.h"
 
 #include <cstring>
+#include <cstdint>
 #include <type_traits>
 
 namespace dxvk::bit {
