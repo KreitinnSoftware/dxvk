@@ -28,12 +28,12 @@ jobs:
 
     - name: Create Tar
       run: |
-        tar -cvf dxvk-${{ env.VERSION_NAME }}.tar build/
+        tar -czvf dxvk-${{ env.VERSION_NAME }}.tar.gz build/dxvk-${{ env.VERSION_NAME }}/
 
     - name: "Create Release"
       uses: softprops/action-gh-release@v2
       with:
-        name: "DXVK ${{ env.VERSION_NAME }}"
+        name: "dxvk-${{ env.VERSION_NAME }}"
         tag_name: ${{ env.VERSION_NAME }}
-        files: dxvk-${{ env.VERSION_NAME }}.tar
+        files: dxvk-${{ env.VERSION_NAME }}.tar.gz
     
