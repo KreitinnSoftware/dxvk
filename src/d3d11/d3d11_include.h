@@ -24,8 +24,8 @@
 // For some strange reason, we cannot use the structures
 // directly, although others from the same header work.
 // Some structures are missing from the mingw headers.
-#if 0
-typedef enum D3D11_FORMAT_SUPPORT2 { 
+#ifndef _MSC_VER
+/*typedef enum D3D11_FORMAT_SUPPORT2 { 
   D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_ADD                                = 0x1,
   D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_BITWISE_OPS                        = 0x2,
   D3D11_FORMAT_SUPPORT2_UAV_ATOMIC_COMPARE_STORE_OR_COMPARE_EXCHANGE  = 0x4,
@@ -39,6 +39,7 @@ typedef enum D3D11_FORMAT_SUPPORT2 {
   D3D11_FORMAT_SUPPORT2_SHAREABLE                                     = 0x400,
   D3D11_FORMAT_SUPPORT2_MULTIPLANE_OVERLAY                            = 0x4000
 } D3D11_FORMAT_SUPPORT2;
+*/
 #define D3D11_RESOURCE_MISC_TILE_POOL (0x20000)
 #define D3D11_RESOURCE_MISC_TILED     (0x40000)
 #ifndef __WINE__
