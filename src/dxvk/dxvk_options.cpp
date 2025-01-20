@@ -9,6 +9,8 @@ namespace dxvk {
     useRawSsbo            = config.getOption<Tristate>("dxvk.useRawSsbo",             Tristate::Auto);
     useEarlyDiscard       = config.getOption<Tristate>("dxvk.useEarlyDiscard",        Tristate::Auto);
     hud                   = config.getOption<std::string>("dxvk.hud", "");
+    enableAsync           = config.getOption<bool>    ("dxvk.enableAsync",            false);
+    numAsyncThreads       = config.getOption<int32_t> ("dxvk.numAsyncThreads",        0);
   }
 
 }
