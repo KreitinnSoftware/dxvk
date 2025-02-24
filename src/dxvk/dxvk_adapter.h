@@ -3,6 +3,7 @@
 #include "dxvk_device_info.h"
 #include "dxvk_extensions.h"
 #include "dxvk_include.h"
+#include <utility>
 
 namespace dxvk {
   

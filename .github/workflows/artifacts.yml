@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Checkout code
       id: checkout-code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         submodules: recursive
         fetch-depth: 0
@@ -26,10 +26,16 @@ jobs:
           ./package-release.sh ${VERSION_NAME} build --no-package
           echo "VERSION_NAME=${VERSION_NAME}" >> $GITHUB_ENV
 
-    - name: Upload artifacts
-      id: upload-artifacts
-      uses: actions/upload-artifact@v2
+    - name: Create Tar
+      run: |
+        cd build
+        tar -czvf ../dxvk-${{ env.VERSION_NAME }}.tar.gz dxvk-${{ env.VERSION_NAME }}/
+        cd ..
+
+    - name: "Create Release"
+      uses: softprops/action-gh-release@v2
       with:
-        name: dxvk-${{ env.VERSION_NAME }}
-        path: build/dxvk-${{ env.VERSION_NAME }}
-        if-no-files-found: error
+        name: "dxvk-${{ env.VERSION_NAME }}"
+        tag_name: ${{ env.VERSION_NAME }}
+        files: dxvk-${{ env.VERSION_NAME }}.tar.gz
+    

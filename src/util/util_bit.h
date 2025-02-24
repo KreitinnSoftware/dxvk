@@ -18,6 +18,7 @@
 
 #include <cstring>
 #include <iterator>
+#include <cstdint>
 #include <type_traits>
 
 namespace dxvk::bit {
